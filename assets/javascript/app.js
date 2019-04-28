@@ -7,7 +7,10 @@ var timeRemaining = 30;
 var questions = ["#question-1", "#question-2", "#question-3", "#question-4", "#question-5", "#question-6", "#question-7", "#question-8", "#question-9", "#question-10"];
 
 // variable to hold correct answers
-var correctAnswers = ["option3"];
+var correctAnswers = ["calatrava"];
+
+// determine if a radio button has been checked
+var checked
 
 // variable to hold user answers
 var userAnswers = [];
@@ -21,7 +24,7 @@ var count = 0;
 //  Variable that holds setInterval that runs the countdown
 var intervalId;
 
-
+// display messages for correct, incorrect or unanswered questions
 var displayCorrect;
 var displayWrong;
 var displayTimeout;
@@ -30,18 +33,20 @@ $(document).ready(function(){
 
     // function to start timer
     function startTimer() {
-        var downloadTimer = setInterval(function(){
+        var intervalId = setInterval(function(){
             $("#timer").text("Time remaining: " + timeRemaining);
             timeRemaining -= 1;
             if(timeRemaining <= 0){
-                clearInterval(downloadTimer);
+                clearInterval(intervalId);
                 $("#timer").text("Time's up!");
             }
         }, 1000);
     }
+    // function to stop timer
+    function stopTimer() {
+        clearInterval(intervalId);
+      }
     
-    
-
 
     // start game
     $("#start").on("click", function(startQuestions) {
@@ -49,14 +54,24 @@ $(document).ready(function(){
 
         // function to load question & answer choices
         function startQuestions() {
-            showQuestion = setInterval(nextQuestion, 35000);
 
             // Show the first question in #question-1 div.
             $("#question-1").addClass(".show");
-
         }
         startQuestions();
         startTimer();
+        function userChoice() {
+            $("input[type='radio']").click(function(){
+                var radioValue = $("input[name='question-1']:checked").val();
+                if(radioValue){
+                    userAnswers.push(radioValue);
+                    console.log("user choice is " + radioValue);
+                    console.log(userAnswers);
+                    stopTimer();
+                }
+            })
+        }
+        userChoice();
     })
 
 
