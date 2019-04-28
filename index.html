@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Milwaukee Trivia</title>
+</head>
+<body>
+    <div class="container-fluid header">
+        <header class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Milwaukee Trivia</h1>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+
+        <main class="row align-items-center">
+            <div id="startScreen" class="col-md-12">
+                <button id="start" type="button" class="btn btn-secondary">Start Game</button>
+            </div>
+            <div class="col-md-12">
+                <h3 id="timer" class="timer"></h3>
+            </div>
+            <div id="question-1" class="col-md-12 display show">
+                <p>Who designed the Milwaukee Art Museum addition?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                            <label class="form-check-label" for="question-1">
+                                Antoni Gaudi
+                            </label>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="question-1">
+                                Frank Gehry
+                            </label>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option3">
+                            <label class="form-check-label" for="question-1">
+                                Santiago Calatrava
+                            </label>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option4">
+                            <label class="form-check-label" for="question-1">
+                                Zaha Hadid
+                            </label>
+                    </div>
+            </div>
+            <div id="question-2" class="col-md-12 display"></div>
+            <div id="question-3" class="col-md-12 display"></div>
+            <div id="question-4" class="col-md-12 display"></div>
+            <div id="question-5" class="col-md-12 display"></div>
+            <div id="question-6" class="col-md-12 display"></div>
+            <div id="question-7" class="col-md-12 display"></div>
+            <div id="question-8" class="col-md-12 display"></div>
+            <div id="question-9" class="col-md-12 display"></div>
+            <div id="question-10" class="col-md-12 display"></div>
+        </main>
+
+    </div><!-- end container -->
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
