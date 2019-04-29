@@ -29,6 +29,7 @@
             <div class="col-md-12">
                 <h3 id="timer" class="timer"></h3>
             </div>
+
             <div id="question-1" class="col-md-12">
                 <p>Who designed the Milwaukee Art Museum addition?</p>
                     <div class="form-check">
@@ -36,29 +37,248 @@
                             <label class="form-check-label" for="question-1">
                                 Antoni Gaudi
                             </label><br>
-                            <input class="form-check-input" type="radio" name="question-1" id="option2" value="gehry">
+                        <input class="form-check-input" type="radio" name="question-1" id="option2" value="gehry">
                             <label class="form-check-label" for="question-1">
                                 Frank Gehry
                             </label><br>
-                            <input class="form-check-input" type="radio" name="question-1" id="option3" value="calatrava">
+                        <input class="form-check-input" type="radio" name="question-1" id="option3" value="calatrava">
                             <label class="form-check-label" for="question-1">
                                 Santiago Calatrava
                             </label><br>
-                            <input class="form-check-input" type="radio" name="question-1" id="option4" value="hadid">
+                        <input class="form-check-input" type="radio" name="question-1" id="option4" value="hadid">
                             <label class="form-check-label" for="question-1">
                                 Zaha Hadid
                             </label>
                     </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
             </div>
-            <div id="question-2" class="col-md-12 display"></div>
-            <div id="question-3" class="col-md-12 display"></div>
-            <div id="question-4" class="col-md-12 display"></div>
-            <div id="question-5" class="col-md-12 display"></div>
-            <div id="question-6" class="col-md-12 display"></div>
-            <div id="question-7" class="col-md-12 display"></div>
-            <div id="question-8" class="col-md-12 display"></div>
-            <div id="question-9" class="col-md-12 display"></div>
-            <div id="question-10" class="col-md-12 display"></div>
+
+            <div id="question-2" class="col-md-12 display">
+                <p>What is the Allen Bradley/Rockwell Automation tower known for?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question-2" id="option1" value="temperature">
+                            <label class="form-check-label" for="question-2">
+                                The first digital temperature gauge on a building in Milwaukee
+                            </label><br>
+                        <input class="form-check-input" type="radio" name="question-2" id="option2" value="clock1">
+                            <label class="form-check-label" for="question-2">
+                                The largest four-faced clock in the world
+                            </label><br>
+                        <input class="form-check-input" type="radio" name="question-2" id="option3" value="tallest">
+                            <label class="form-check-label" for="question-2">
+                                The tallest building in Milwaukee
+                            </label><br>
+                        <input class="form-check-input" type="radio" name="question-2" id="option4" value="clock2">
+                            <label class="form-check-label" for="question-2">
+                                The second largest four-faced clock in the world
+                            </label>
+                    </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-3" class="col-md-12 display">
+                <p>Which of these TV shows was not based in Milwaukee?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question-3" id="option1" value="laverneShirley">
+                            <label class="form-check-label" for="question-3">
+                                Laverne and Shirley
+                            </label><br>
+                        <input class="form-check-input" type="radio" name="question-3" id="option2" value="70sShow">
+                            <label class="form-check-label" for="question-3">
+                                That 70s Show
+                            </label><br>
+                        <input class="form-check-input" type="radio" name="question-3" id="option3" value="agentsShield">
+                            <label class="form-check-label" for="question-3">
+                                Agents of S.H.I.E.L.D.
+                            </label><br>
+                        <input class="form-check-input" type="radio" name="question-3" id="option4" value="happyDays">
+                            <label class="form-check-label" for="question-3">
+                                Happy Days
+                            </label>
+                    </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-4" class="col-md-12 display">
+                <p>Which of these was not a founding father of Milwaukee?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-4" id="option1" value="maier">
+                        <label class="form-check-label" for="question-4">
+                            Henry Maier
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-4" id="option2" value="juneau">
+                        <label class="form-check-label" for="question-4">
+                            Solomon Juneau
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-4" id="option3" value="walker">
+                        <label class="form-check-label" for="question-4">
+                            George Walker
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-4" id="option4" value="kilbourn">
+                        <label class="form-check-label" for="question-4">
+                            Byron Kilbourn
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-5" class="col-md-12 display">
+                <p>Which of these festivals is not held at Henry Maier Park?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-5" id="option1" value="summerfest">
+                        <label class="form-check-label" for="question-5">
+                            SummerFest
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-5" id="option2" value="bastille">
+                        <label class="form-check-label" for="question-5">
+                            Bastille Days
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-5" id="option3" value="irish">
+                        <label class="form-check-label" for="question-5">
+                            Irish Fest
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-5" id="option4" value="festa">
+                        <label class="form-check-label" for="question-5">
+                            Festa Italiana
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-6" class="col-md-12 display">
+                <p>What year was Harley Davidon started?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-6" id="option1" value="1903">
+                        <label class="form-check-label" for="question-6">
+                            1903
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-6" id="option2" value="1901">
+                        <label class="form-check-label" for="question-6">
+                            1901
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-6" id="option3" value="1909">
+                        <label class="form-check-label" for="question-6">
+                            1909
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-6" id="option4" value="1900">
+                        <label class="form-check-label" for="question-6">
+                            1900
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-7" class="col-md-12 display">
+                <p>What is the oldest building in Milwaukee?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-7" id="option1" value="benjaminChurch">
+                        <label class="form-check-label" for="question-7">
+                            Benjamin Church House
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-7" id="option2" value="stMarys">
+                        <label class="form-check-label" for="question-7">
+                            Old St. Mary's Church
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-7" id="option3" value="joanArc">
+                        <label class="form-check-label" for="question-7">
+                            St. Joan of Arc Chapel
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-7" id="option4" value="cityHall">
+                        <label class="form-check-label" for="question-7">
+                            City Hall
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-8" class="col-md-12 display">
+                <p>Why is Milwaukee known as the Cream City?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-8" id="option1" value="creamAle">
+                        <label class="form-check-label" for="question-8">
+                            Cream ale was invented here
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-8" id="option2" value="dairy">
+                        <label class="form-check-label" for="question-8">
+                            Milwaukee is the largest city in the dairy state
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-8" id="option3" value="cheese">
+                        <label class="form-check-label" for="question-8">
+                            Cream cheese was invented here
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-8" id="option4" value="brickColor">
+                        <label class="form-check-label" for="question-8">
+                            The color of brick in many buildings in the city
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-9" class="col-md-12 display">
+                <p>Which of these is not a river in Milwaukee?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-9" id="option1" value="milwaukee">
+                        <label class="form-check-label" for="question-9">
+                            Milwaukee River
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-9" id="option2" value="kinnickinnic">
+                        <label class="form-check-label" for="question-9">
+                            Kinnickinnic River
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-9" id="option3" value="rock">
+                        <label class="form-check-label" for="question-9">
+                            Rock River
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-9" id="option4" value="menomonee">
+                        <label class="form-check-label" for="question-9">
+                            Menomonee River
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
+
+            <div id="question-10" class="col-md-12 display">
+                <p>Which of these musicians/bands is not from Milwaukee?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question-9" id="option1" value="lesPaul">
+                        <label class="form-check-label" for="question-9">
+                            Les Paul
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-9" id="option2" value="femmes">
+                        <label class="form-check-label" for="question-9">
+                            The Violent Femmes
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-9" id="option3" value="dannyGokey">
+                        <label class="form-check-label" for="question-9">
+                            Danny Gokey
+                        </label><br>
+                    <input class="form-check-input" type="radio" name="question-9" id="option4" value="gufs">
+                        <label class="form-check-label" for="question-9">
+                            The Gufs
+                        </label>
+                </div>
+                <p id="messageCorrect"></p>
+                <p id="messageWrong"></p>
+                <p id="messageTimeout"></p>
+            </div>
         </main>
 
     </div><!-- end container -->
