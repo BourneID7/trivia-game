@@ -16,7 +16,7 @@ var userAnswers = [];
 var showQuestion;
 
 // count keeps track of the index of the currently displaying question.
-var count;
+var count = 1;
 
 //  Variable that holds setInterval that runs the countdown
 var intervalId;
@@ -27,8 +27,6 @@ var totalWrong = 0;
 var totalTimeout = 0;
 
 $(document).ready(function(){
-
-    var myTimer = setInterval(startTimer, 30000);
 
     // function to start timer
     function startTimer() {
@@ -43,75 +41,103 @@ $(document).ready(function(){
     }
     // function to stop timer
     function stopTimer() {
-        clearInterval(myTimer);
+        clearInterval(intervalId);
     }
     
+    // function to load next question
+    function nextQuestion() {
+        // hide last question
+        $("#question-" + count).hide();
+
+        //  Increment the count by 1.
+        count++;
+
+        // show next question
+        $("#question-" + count).show();
+    }
 
     // start game
     $("#start").on("click", function(startQuestions) {
         $("#startScreen").hide("#start");
+        $("#question-2").hide();
+        $("#question-3").hide();
+        $("#question-4").hide();
+        $("#question-5").hide();
+        $("#question-6").hide();
+        $("#question-7").hide();
+        $("#question-8").hide();
+        $("#question-9").hide();
+        $("#question-10").hide();
+
 
         // function to load question & answer choices
         function startQuestions() {
 
-        // Show the first question in #question-1 div.
-        $("#question-1").addClass(".show");
+            // Show the first question in #question-1 div.
+            $("#question-" + count).show();
 
         }
         startQuestions();
         startTimer();
+        
+        
         function userChoice() {
             $("input[type='radio']").click(function(){
                 var radioValue = $("input[name='question-1']:checked").val();
-                stopTimer();
 
                 if(radioValue){
                     userAnswers.push(radioValue);
                     console.log("user choice is " + radioValue);
                     console.log(userAnswers);
+                    stopTimer();
+                    nextQuestion();
                 }
             })
         }
         userChoice();
         // on click answer choice determine correct/incorrect
-        // if (userAnswers[count] === correctAnswers[count]) {
-        //     $("#messageCorrect").text("You're right!");
-        //     totalCorrect++;
-        //     console.log("total correct answers: " + totalCorrect)
+        for (var i = 0; i < userAnswers.length; i++) {
 
-        // } else if (userAnswers[count] !== correctAnswers[count]) {
-        //     $("#messageWrong").text("Sorry, wrong answer. The correct answer is " + correctAnswers[count]);
-        //     totalWrong++;
-        //     console.log("total wrong answers: " + totalWrong);
-        // } else if (timeRemaining === 0) {
-        //     $("#messageTimeout").text("Sorry, you're out of time. The correct answer is " + correctAnswers[count]);
-        //     totalTimeout++;
-        //     console.log("total unanswered questions: " + totalTimeout);
-        // }
-        
+            // if correct display correct message & load next question. Restart timer.
+
+            if (userAnswers[i] === correctAnswers[i]) {
+                $("#messageCorrect").text("You're right!");
+                totalCorrect++;
+                console.log("total correct answers: " + totalCorrect)
+
+            // else if incorrect display incorrect message, display correct answer & load next question. Reset timer.
+    
+            } else if (userAnswers[i] !== correctAnswers[i]) {
+                $("#messageWrong").text("Sorry, wrong answer. The correct answer is " + correctAnswers[count]);
+                totalWrong++;
+                console.log("total wrong answers: " + totalWrong);
+
+            // else if timeout display timeout message & correct answer. Load next question. Reset timer.
+
+            } else if (timeRemaining === 0) {
+                $("#messageTimeout").text("Sorry, you're out of time. The correct answer is " + correctAnswers[count]);
+                totalTimeout++;
+                console.log("total unanswered questions: " + totalTimeout);
+            }
+
+        }
 
     })
 
 
-    function nextQuestion() {
-        //  Increment the count by 1.
-        count++;
-    
+
     
         // setTimeout to run displayQuestion after 30 second.
-        setTimeout(showQuestion, 30000);
+        //setTimeout(showQuestion, 30000);
     
         // If the count is the same as the length of the image array, display end of game screen.
        
-    }
+    
 
 
 
-    // if correct display correct message & load next question. Restart timer.
 
-    // else if incorrect display incorrect message, display correct answer & load next question. Reset timer.
 
-    // ele if timeout display timeout message & correct answer. Load next question. Reset timer.
 
     // when all questions answered display total correct/incorrect. Display play again button.
 })
