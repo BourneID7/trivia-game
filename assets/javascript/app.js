@@ -7,7 +7,7 @@ var timeRemaining = 30;
 var questions = ["#question-0", "#question-1", "#question-2", "#question-3", "#question-4", "#question-5", "#question-6", "#question-7", "#question-8", "#question-9"];
 
 // variable to hold correct answers
-var correctAnswers = ["Santiago Calatrava", "The second largest four-faced clock", "That 70s Show", "Henry Maier", "Bastille Days", "1903", "Joan of Arc Chapel", "The color of brick", "Rock River", "Les Paul"];
+var correctAnswers = ["Santiago Calatrava", "The second largest four-faced clock", "That 70s Show", "Henry Maier", "Bastille Days", "1903", "St. Joan of Arc Chapel", "The color of brick", "Rock River", "Les Paul"];
 
 // variable to hold user answers
 var userAnswers = [];
@@ -38,6 +38,10 @@ $(document).ready(function(){
             if(timeRemaining <= 0){
                 clearInterval(intervalId);
                 $("#timer").text("Time's up!");
+                stopTimer();
+                userAnswers.push("unanswered");
+                nextQuestion();
+
             }
         }, 1000);
     }
@@ -52,12 +56,41 @@ $(document).ready(function(){
         // hide last question
         $("#question-" + count).hide();
 
-        //  Increment the count by 1.
+        // Increment the count by 1.
         count++;
 
         // show next question
         $("#question-" + count).show();
+
+        // reset timer
+        startTimer();
     }
+
+        // on click answer choice determine correct/incorrect
+        function checkAnswer() {
+
+                // if correct display correct message.
+    
+                if (userAnswers[count] === correctAnswers[count]) {
+                    $("#messageCorrect-" + count).text("You're right!");
+                    totalCorrect ++;
+                    console.log("total correct answers: " + totalCorrect)
+    
+                // else if incorrect display incorrect message, display correct answer.
+        
+                } else if (userAnswers[count] !== correctAnswers[count]) {
+                    $("#messageWrong-" + count).text("Sorry, wrong answer. The correct answer is " + correctAnswers[count]);
+                    totalWrong++;
+                    console.log("total wrong answers: " + totalWrong);
+    
+                // else if timeout display timeout message & correct answer.
+    
+                } else if (userAnswers[count] === "unanswered") {
+                    $("#messageTimeout-" + count).text("Sorry, you're out of time. The correct answer is " + correctAnswers[count]);
+                    totalTimeout++;
+                    console.log("total unanswered questions: " + totalTimeout);
+            }
+        }
 
     // start game
     $("#start").on("click", function(startQuestions) {
@@ -94,8 +127,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue0);
                 console.log(userAnswers[0]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
                 
             })
             $(".question-1").click(function(){
@@ -105,8 +138,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue1);
                 console.log(userAnswers[1]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-2").click(function(){
                 var radioValue2 = $("input[name='question-2']:checked").val();
@@ -115,8 +148,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue2);
                 console.log(userAnswers[2]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-3").click(function(){
                 var radioValue3 = $("input[name='question-3']:checked").val();
@@ -125,8 +158,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue3);
                 console.log(userAnswers[3]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-4").click(function(){
                 var radioValue4 = $("input[name='question-4']:checked").val();
@@ -135,8 +168,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue4);
                 console.log(userAnswers[4]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-5").click(function(){
                 var radioValue5 = $("input[name='question-5']:checked").val();
@@ -145,8 +178,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue5);
                 console.log(userAnswers[5]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-6").click(function(){
                 var radioValue6 = $("input[name='question-6']:checked").val();
@@ -155,8 +188,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue6);
                 console.log(userAnswers[6]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-7").click(function(){
                 var radioValue7 = $("input[name='question-7']:checked").val();
@@ -165,8 +198,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue7);
                 console.log(userAnswers[7]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-8").click(function(){
                 var radioValue8 = $("input[name='question-8']:checked").val();
@@ -175,8 +208,8 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue8);
                 console.log(userAnswers[8]);
                 stopTimer();
+                checkAnswer();
                 nextQuestion();
-                startTimer();
             })
             $(".question-9").click(function(){
                 var radioValue9 = $("input[name='question-9']:checked").val();
@@ -185,34 +218,10 @@ $(document).ready(function(){
                 console.log("user choice is " + radioValue9);
                 console.log(userAnswers[9]);
                 stopTimer();
+                checkAnswer();
             })
         
-        // on click answer choice determine correct/incorrect
-        // for (var i = 0; i < userAnswers.length; i++) {
 
-        //     // if correct display correct message & load next question. Restart timer.
-
-        //     if (userAnswers[i] === correctAnswers[i]) {
-        //         $("#messageCorrect").text("You're right!");
-        //         totalCorrect++;
-        //         console.log("total correct answers: " + totalCorrect)
-
-        //     // else if incorrect display incorrect message, display correct answer & load next question. Reset timer.
-    
-        //     } else if (userAnswers[i] !== correctAnswers[i]) {
-        //         $("#messageWrong").text("Sorry, wrong answer. The correct answer is " + correctAnswers[i]);
-        //         totalWrong++;
-        //         console.log("total wrong answers: " + totalWrong);
-
-        //     // else if timeout display timeout message & correct answer. Load next question. Reset timer.
-
-        //     } else if (timeRemaining === 0) {
-        //         $("#messageTimeout").text("Sorry, you're out of time. The correct answer is " + correctAnswers[i]);
-        //         totalTimeout++;
-        //         console.log("total unanswered questions: " + totalTimeout);
-        //     }
-
-        // }
 
     })
 
