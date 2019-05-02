@@ -46,16 +46,11 @@ h1 {
     transform: translate(-50%, -50%);
 }
 .hidden {
-    position: absolute;
-    display: none;
     visibility: hidden;
-    z-index: -10;
 }
 .show {
-    position: absolute;
     display: block;
     visibility: visible;
-    z-index: 10;
 }
 .correct {
     margin-top: 20px;

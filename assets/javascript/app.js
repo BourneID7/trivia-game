@@ -12,8 +12,8 @@ var correctAnswers = ["Santiago Calatrava", "The second largest four-faced clock
 // variable to hold user answers
 var userAnswers = [];
 
-// variable showQuestion holds the setInterval when game starts
-var showQuestion;
+// variable to hold skipped questions
+var skipped = [];
 
 // count keeps track of the index of the currently displaying question.
 var count = 0;
@@ -33,18 +33,23 @@ $(document).ready(function(){
     function startTimer() {
         
             intervalId = setInterval(function(){
-            $("#timer").text("Time remaining: " + timeRemaining);
-            timeRemaining -= 1;
+                $("#timer").text("Time remaining: " + timeRemaining);
+                timeRemaining -= 1;
+
             if(timeRemaining <= 0){
                 clearInterval(intervalId);
                 $("#timer").text("Time's up!");
-                stopTimer();
                 userAnswers.push("unanswered");
-                nextQuestion();
-
+                skipped.push("unanswered");
+                $("#messageTimeout-" + count).text("Sorry, you're out of time. The correct answer is " + correctAnswers[count] + ".");
+                totalTimeout = skipped.length;
+                console.log("total unanswered questions: " + totalTimeout);
+                stopTimer();
+                delayNextQuestion();
             }
         }, 1000);
     }
+
     // function to stop timer
     function stopTimer() {
         clearInterval(intervalId);
@@ -80,24 +85,16 @@ $(document).ready(function(){
             $("#messageCorrect-" + count).text("You're right!");
             totalCorrect ++;
             console.log("total correct answers: " + totalCorrect)
+        }
 
         // else if incorrect display incorrect message, display correct answer.
 
-        } else if (userAnswers[count] !== correctAnswers[count]) {
+        else if (userAnswers[count] !== correctAnswers[count]) {
             $("#messageWrong-" + count).text("Sorry, wrong answer. The correct answer is " + correctAnswers[count] + ".");
             totalWrong++;
             console.log("total wrong answers: " + totalWrong);
-
-        // else if timeout display timeout message & correct answer.
-
-        } else if (userAnswers[count] == "unanswered") {
-            $("#messageTimeout-" + count).text("Sorry, you're out of time. The correct answer is " + correctAnswers[count] + ".");
-            totalTimeout++;
-            console.log("total unanswered questions: " + totalTimeout);
         }
-
     }
-
 
     // start game
     $("#start").on("click", function(startQuestions) {
@@ -128,11 +125,11 @@ $(document).ready(function(){
         // function to display end of game screen
         function gameOver() {
             setTimeout(5000);
+            $("#timer").text("");
             $("#question-9").hide();
             $("#endScreen").show();
             $("#right").text(totalCorrect);
             $("#wrong").text(totalWrong);
-            totalTimeout = questions.length - (totalCorrect + totalWrong);
             $("#unanswered").text(totalTimeout);
             // $("#restart").on("click", function() {
             //     count = 0;
@@ -160,7 +157,6 @@ $(document).ready(function(){
             // })
         }
         
-        
         // record user choices
 
         $(".question-0").click(function(){
@@ -168,7 +164,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue0);
-            console.log(userAnswers[0]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -179,7 +175,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue1);
-            console.log(userAnswers[1]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -189,7 +185,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue2);
-            console.log(userAnswers[2]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -199,7 +195,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue3);
-            console.log(userAnswers[3]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -209,7 +205,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue4);
-            console.log(userAnswers[4]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -219,7 +215,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue5);
-            console.log(userAnswers[5]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -229,7 +225,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue6);
-            console.log(userAnswers[6]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -239,7 +235,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue7);
-            console.log(userAnswers[7]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -249,7 +245,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue8);
-            console.log(userAnswers[8]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             delayNextQuestion();
@@ -259,7 +255,7 @@ $(document).ready(function(){
 
             userAnswers.push($(this).val());
             console.log("user choice is " + radioValue9);
-            console.log(userAnswers[9]);
+            console.log(userAnswers);
             stopTimer();
             checkAnswer();
             gameOver();
@@ -269,17 +265,4 @@ $(document).ready(function(){
 
     })
 
-
-
-    
-        // If the count is the same as the length of the questions array, display end of game screen.
-       
-    
-
-
-
-
-
-
-    // when all questions answered display total correct/incorrect. Display play again button.
 })
