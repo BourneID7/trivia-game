@@ -27,6 +27,20 @@ var totalWrong = 0;
 var totalTimeout = 0;
 
 $(document).ready(function(){
+
+    // hide all questions on start screen
+    $("#startScreen").show();
+    $("#question-0").hide();
+    $("#question-1").hide();
+    $("#question-2").hide();
+    $("#question-3").hide();
+    $("#question-4").hide();
+    $("#question-5").hide();
+    $("#question-6").hide();
+    $("#question-7").hide();
+    $("#question-8").hide();
+    $("#question-9").hide();
+    $("#endScreen").hide();
     
 
     // function to start timer
@@ -52,10 +66,15 @@ $(document).ready(function(){
         }, 1000);
     }
 
-    // function to stop timer
+    // function to stop timer & reset count for next question
     function stopTimer() {
         clearInterval(intervalId);
         timeRemaining = 20;
+    }
+
+    //function to stop timer after game over. No reset
+    function stopTimerLast() {
+        clearInterval(intervalId);
     }
     
     // function to load next question
@@ -105,17 +124,7 @@ $(document).ready(function(){
     // start game
     $("#start").on("click", function(startQuestions) {
         $("#startScreen").hide("#start");
-        $("#question-1").hide();
-        $("#question-2").hide();
-        $("#question-3").hide();
-        $("#question-4").hide();
-        $("#question-5").hide();
-        $("#question-6").hide();
-        $("#question-7").hide();
-        $("#question-8").hide();
-        $("#question-9").hide();
-        $("#endScreen").hide();
-
+        $("#question-0").show();
 
         // function to load question & answer choices
         function startQuestions() {
@@ -138,6 +147,7 @@ $(document).ready(function(){
             $("#wrong").text(totalWrong);
             $("#unanswered").text(totalTimeout);
             $("#endImage").append('<p><img class="img-fluid" src="assets/images/game-over.jpg"></p>')
+            stopTimerLast();
             // $("#restart").on("click", function() {
             //     count = 0;
             //     totalCorrect = 0;
