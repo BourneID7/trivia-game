@@ -44,6 +44,7 @@ $(document).ready(function(){
                 // skipped array keeps track of total unanaswered questions 
                 skipped.push("unanswered");
                 $("#messageTimeout-" + count).text("Sorry, you're out of time. The correct answer is " + correctAnswers[count] + ".");
+                $(".image-" + count).append('<p><img class="img-fluid" src="assets/images/image-' + count + '.jpg"></p>');
                 totalTimeout = skipped.length;
                 stopTimer();
                 delayNextQuestion();
