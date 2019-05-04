@@ -148,30 +148,6 @@ $(document).ready(function(){
             $("#unanswered").text(totalTimeout);
             $("#endImage").append('<p><img class="img-fluid" src="assets/images/game-over.jpg"></p>')
             stopTimerLast();
-            // $("#restart").on("click", function() {
-            //     count = 0;
-            //     totalCorrect = 0;
-            //     totalWrong = 0;
-            //     totalTimeout = 0;
-            //     userAnswers = [];
-    
-            //     $("#endScreen").hide();
-            //     $("#startScreen").hide("#start");
-            //     $("#question-1").hide();
-            //     $("#question-2").hide();
-            //     $("#question-3").hide();
-            //     $("#question-4").hide();
-            //     $("#question-5").hide();
-            //     $("#question-6").hide();
-            //     $("#question-7").hide();
-            //     $("#question-8").hide();
-            //     $("#question-9").hide();
-            //     $("#question-" + count).show();
-    
-            //     startQuestions();
-            //     startTimer();
-
-            // })
         }
         
         // record user choices
