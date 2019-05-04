@@ -35,15 +35,16 @@ $(document).ready(function(){
             intervalId = setInterval(function(){
                 $("#timer").text("Time remaining: " + timeRemaining);
                 timeRemaining -= 1;
-
+            // if time runs out before user answers display time's up & unanswered message
             if(timeRemaining <= 0){
                 clearInterval(intervalId);
                 $("#timer").text("Time's up!");
+                // push unanswered to userAnswers array as a placeholder so subsequent answers match index of the question to determine right/wrong
                 userAnswers.push("unanswered");
+                // skipped array keeps track of total unanaswered questions 
                 skipped.push("unanswered");
                 $("#messageTimeout-" + count).text("Sorry, you're out of time. The correct answer is " + correctAnswers[count] + ".");
                 totalTimeout = skipped.length;
-                console.log("total unanswered questions: " + totalTimeout);
                 stopTimer();
                 delayNextQuestion();
             }
@@ -85,6 +86,8 @@ $(document).ready(function(){
             $("#messageCorrect-" + count).text("You're right!");
             totalCorrect ++;
             console.log("total correct answers: " + totalCorrect)
+            // display question image
+            $(".image-" + count).append('<p><img class="img-fluid" src="assets/images/image-' + count + '.jpg"></p>');
         }
 
         // else if incorrect display incorrect message, display correct answer.
@@ -93,6 +96,8 @@ $(document).ready(function(){
             $("#messageWrong-" + count).text("Sorry, wrong answer. The correct answer is " + correctAnswers[count] + ".");
             totalWrong++;
             console.log("total wrong answers: " + totalWrong);
+            // display question image
+            $(".image-" + count).append('<p><img class="img-fluid" src="assets/images/image-' + count + '.jpg"></p>');
         }
     }
 
@@ -131,6 +136,7 @@ $(document).ready(function(){
             $("#right").text(totalCorrect);
             $("#wrong").text(totalWrong);
             $("#unanswered").text(totalTimeout);
+            $("#endImage").append('<p><img class="img-fluid" src="assets/images/game-over.jpg"></p>')
             // $("#restart").on("click", function() {
             //     count = 0;
             //     totalCorrect = 0;
@@ -258,7 +264,7 @@ $(document).ready(function(){
             console.log(userAnswers);
             stopTimer();
             checkAnswer();
-            gameOver();
+            setTimeout(gameOver, 3000);
 
         })
         

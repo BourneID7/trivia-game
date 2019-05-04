@@ -11,52 +11,58 @@
     <title>Milwaukee Trivia</title>
 </head>
 <body>
+    <!-- full width header -->
     <div class="container-fluid header">
+        <!--<img class="img-fluid" src="assets/images/header.jpg" />-->
         <header class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Milwaukee Trivia</h1>
-                </div>
-            </div>
+            <h1>Milwaukee Trivia</h1>
         </header>
     </div>
-    <div class="container">
-
-        <main class="row align-items-center">
+    <!-- main content centered -->
+    <main class="container">
+        <div class="row">
             <div id="startScreen" class="col-md-12">
                 <button id="start" type="button" class="btn-lg btn-secondary">Start Game</button>
             </div>
+        </div>
+        <!-- timer -->
+        <div class="row">
             <div class="col-md-12">
                 <h3 id="timer" class="timer"></h3>
             </div>
-
-            <div id="question-0" class="col-md-12">
+        </div>
+        <!-- question-0 -->
+        <div id="question-0" class="row">
+            <div class="col-md-8">
                 <p>Who designed the Milwaukee Art Museum addition?</p>
-                    <div class="form-check">
-                        <input class="form-check-input question-0" type="radio" name="question-0" id="option1" value="Antoni Gaudi">
-                            <label class="form-check-label" for="question-0">
-                                Antoni Gaudi
-                            </label><br>
-                        <input class="form-check-input question-0" type="radio" name="question-0" id="option2" value="Frank Gehry">
-                            <label class="form-check-label" for="question-0">
-                                Frank Gehry
-                            </label><br>
-                        <input class="form-check-input question-0" type="radio" name="question-0" id="option3" value="Santiago Calatrava">
-                            <label class="form-check-label" for="question-0">
-                                Santiago Calatrava
-                            </label><br>
-                        <input class="form-check-input question-0" type="radio" name="question-0" id="option4" value="Zaha Hadid">
-                            <label class="form-check-label" for="question-0">
-                                Zaha Hadid
-                            </label>
-                    </div>
+                <div class="form-check">
+                    <input class="form-check-input question-0" type="radio" name="question-0" id="option1" value="Antoni Gaudi">
+                        <label class="form-check-label" for="question-0">
+                            Antoni Gaudi
+                        </label><br>
+                    <input class="form-check-input question-0" type="radio" name="question-0" id="option2" value="Frank Gehry">
+                        <label class="form-check-label" for="question-0">
+                            Frank Gehry
+                        </label><br>
+                    <input class="form-check-input question-0" type="radio" name="question-0" id="option3" value="Santiago Calatrava">
+                        <label class="form-check-label" for="question-0">
+                            Santiago Calatrava
+                        </label><br>
+                    <input class="form-check-input question-0" type="radio" name="question-0" id="option4" value="Zaha Hadid">
+                        <label class="form-check-label" for="question-0">
+                            Zaha Hadid
+                        </label>
+                </div>
                 <p id="messageCorrect-0" class="correct message"></p>
                 <p id="messageWrong-0" class="message"></p>
                 <p id="messageTimeout-0" class="message"></p>
             </div>
-
-            <div id="question-1" class="col-md-12">
-                <p>What is the Allen Bradley/Rockwell Automation tower known for?</p>
+            <div class="col-md-4 image-0"></div>
+        </div>
+        <!-- question-1 -->
+        <div id="question-1" class="row">
+                <div class="col-md-8">
+                    <p>What is the Allen Bradley/Rockwell Automation tower known for?</p>
                     <div class="form-check">
                         <input class="form-check-input question-1" type="radio" name="question-1" id="option1" value="The first digital temperature gauge">
                             <label class="form-check-label" for="question-1">
@@ -75,13 +81,16 @@
                                 The second largest four-faced clock in the world
                             </label>
                     </div>
-                <p id="messageCorrect-1" class="correct message"></p>
-                <p id="messageWrong-1" class="message"></p>
-                <p id="messageTimeout-1" class="message"></p>
+                    <p id="messageCorrect-1" class="correct message"></p>
+                    <p id="messageWrong-1" class="message"></p>
+                    <p id="messageTimeout-1" class="message"></p>
+                </div>
+                <div class="col-md-4 image-1"></div>
             </div>
-
-            <div id="question-2" class="col-md-12">
-                <p>Which of these TV shows was not based in Milwaukee?</p>
+            <!-- question-2 -->
+            <div id="question-2" class="row">
+                <div class="col-md-8">
+                    <p>Which of these TV shows was not based in Milwaukee?</p>
                     <div class="form-check">
                         <input class="form-check-input question-2" type="radio" name="question-2" id="option1" value="Laverne and Shirley">
                             <label class="form-check-label" for="question-2">
@@ -100,198 +109,222 @@
                                 Happy Days
                             </label>
                     </div>
-                <p id="messageCorrect-2" class="correct message"></p>
-                <p id="messageWrong-2" class="message"></p>
-                <p id="messageTimeout" class="message"></p>
-            </div>
-
-            <div id="question-3" class="col-md-12">
-                <p>Which of these was not a founding father of Milwaukee?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-3" type="radio" name="question-3" id="option1" value="Henry Maier">
-                        <label class="form-check-label question-3" for="question-3">
-                            Henry Maier
-                        </label><br>
-                    <input class="form-check-input question-3" type="radio" name="question-3" id="option2" value="Solomon Juneau">
-                        <label class="form-check-label" for="question-3">
-                            Solomon Juneau
-                        </label><br>
-                    <input class="form-check-input question-3" type="radio" name="question-3" id="option3" value="George Walker">
-                        <label class="form-check-label" for="question-3">
-                            George Walker
-                        </label><br>
-                    <input class="form-check-input question-3" type="radio" name="question-3" id="option4" value="Byron Kilbourn">
-                        <label class="form-check-label" for="question-3">
-                            Byron Kilbourn
-                        </label>
+                    <p id="messageCorrect-2" class="correct message"></p>
+                    <p id="messageWrong-2" class="message"></p>
+                    <p id="messageTimeout" class="message"></p>
                 </div>
-                <p id="messageCorrect-3" class="correct message"></p>
-                <p id="messageWrong-3" class="message"></p>
-                <p id="messageTimeout-3" class="message"></p>
+                <div class="col-md-4 image-2"></div>
             </div>
-
-            <div id="question-4" class="col-md-12">
-                <p>Which of these festivals is not held at Henry Maier Festival Grounds?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-4" type="radio" name="question-4" id="option1" value="SummerFest">
-                        <label class="form-check-label" for="question-4">
-                            SummerFest
-                        </label><br>
-                    <input class="form-check-input question-4" type="radio" name="question-4" id="option2" value="Bastille Days">
-                        <label class="form-check-label" for="question-4">
-                            Bastille Days
-                        </label><br>
-                    <input class="form-check-input question-4" type="radio" name="question-4" id="option3" value="Irish Fest">
-                        <label class="form-check-label" for="question-4">
-                            Irish Fest
-                        </label><br>
-                    <input class="form-check-input question-4" type="radio" name="question-4" id="option4" value="Festa Italiana">
-                        <label class="form-check-label" for="question-4">
-                            Festa Italiana
-                        </label>
+            <!-- question-3 -->
+            <div id="question-3" class="row">
+                <div class="col-md-8">
+                    <p>Which of these was not a founding father of Milwaukee?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-3" type="radio" name="question-3" id="option1" value="Henry Maier">
+                            <label class="form-check-label question-3" for="question-3">
+                                Henry Maier
+                            </label><br>
+                        <input class="form-check-input question-3" type="radio" name="question-3" id="option2" value="Solomon Juneau">
+                            <label class="form-check-label" for="question-3">
+                                Solomon Juneau
+                            </label><br>
+                        <input class="form-check-input question-3" type="radio" name="question-3" id="option3" value="George Walker">
+                            <label class="form-check-label" for="question-3">
+                                George Walker
+                            </label><br>
+                        <input class="form-check-input question-3" type="radio" name="question-3" id="option4" value="Byron Kilbourn">
+                            <label class="form-check-label" for="question-3">
+                                Byron Kilbourn
+                            </label>
+                    </div>
+                    <p id="messageCorrect-3" class="correct message"></p>
+                    <p id="messageWrong-3" class="message"></p>
+                    <p id="messageTimeout-3" class="message"></p>
                 </div>
-                <p id="messageCorrect-4" class="correct message"></p>
-                <p id="messageWrong-4" class="message"></p>
-                <p id="messageTimeout-4" class="message"></p>
+                <div class="col-md-4 image-3"></div>
             </div>
-
-            <div id="question-5" class="col-md-12">
-                <p>What year was Harley Davidon started?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-5" type="radio" name="question-5" id="option1" value="1903">
-                        <label class="form-check-label" for="question-5">
-                            1903
-                        </label><br>
-                    <input class="form-check-input question-5" type="radio" name="question-5" id="option2" value="1901">
-                        <label class="form-check-label" for="question-5">
-                            1901
-                        </label><br>
-                    <input class="form-check-input question-5" type="radio" name="question-5" id="option3" value="1909">
-                        <label class="form-check-label" for="question-5">
-                            1909
-                        </label><br>
-                    <input class="form-check-input question-5" type="radio" name="question-5" id="option4" value="1900">
-                        <label class="form-check-label" for="question-5">
-                            1900
-                        </label>
+            <!-- question-4 -->
+            <div id="question-4" class="row">
+                <div class="col-md-8">
+                    <p>Which of these festivals is not held at Henry Maier Festival Grounds?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-4" type="radio" name="question-4" id="option1" value="SummerFest">
+                            <label class="form-check-label" for="question-4">
+                                SummerFest
+                            </label><br>
+                        <input class="form-check-input question-4" type="radio" name="question-4" id="option2" value="Bastille Days">
+                            <label class="form-check-label" for="question-4">
+                                Bastille Days
+                            </label><br>
+                        <input class="form-check-input question-4" type="radio" name="question-4" id="option3" value="Irish Fest">
+                            <label class="form-check-label" for="question-4">
+                                Irish Fest
+                            </label><br>
+                        <input class="form-check-input question-4" type="radio" name="question-4" id="option4" value="Festa Italiana">
+                            <label class="form-check-label" for="question-4">
+                                Festa Italiana
+                            </label>
+                    </div>
+                    <p id="messageCorrect-4" class="correct message"></p>
+                    <p id="messageWrong-4" class="message"></p>
+                    <p id="messageTimeout-4" class="message"></p>
                 </div>
-                <p id="messageCorrect-5" class="correct message"></p>
-                <p id="messageWrong-5" class="message"></p>
-                <p id="messageTimeout-5" class="message"></p>
+                <div class="col-md-4 image-4"></div>
             </div>
-
-            <div id="question-6" class="col-md-12">
-                <p>What is the oldest building in Milwaukee?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-6" type="radio" name="question-6" id="option1" value="Benjamin Church House">
-                        <label class="form-check-label" for="question-6">
-                            Benjamin Church House
-                        </label><br>
-                    <input class="form-check-input question-6" type="radio" name="question-6" id="option2" value="Old St. Mary's Church">
-                        <label class="form-check-label" for="question-6">
-                            Old St. Mary's Church
-                        </label><br>
-                    <input class="form-check-input question-6" type="radio" name="question-6" id="option3" value="St. Joan of Arc Chapel">
-                        <label class="form-check-label" for="question-6">
-                            St. Joan of Arc Chapel
-                        </label><br>
-                    <input class="form-check-input question-6" type="radio" name="question-6" id="option4" value="City Hall">
-                        <label class="form-check-label" for="question-6">
-                            City Hall
-                        </label>
+            <!-- question-5 -->
+            <div id="question-5" class="row">
+                <div class="col-md-8">
+                    <p>What year was Harley Davidon started?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-5" type="radio" name="question-5" id="option1" value="1903">
+                            <label class="form-check-label" for="question-5">
+                                1903
+                            </label><br>
+                        <input class="form-check-input question-5" type="radio" name="question-5" id="option2" value="1901">
+                            <label class="form-check-label" for="question-5">
+                                1901
+                            </label><br>
+                        <input class="form-check-input question-5" type="radio" name="question-5" id="option3" value="1909">
+                            <label class="form-check-label" for="question-5">
+                                1909
+                            </label><br>
+                        <input class="form-check-input question-5" type="radio" name="question-5" id="option4" value="1900">
+                            <label class="form-check-label" for="question-5">
+                                1900
+                            </label>
+                    </div>
+                    <p id="messageCorrect-5" class="correct message"></p>
+                    <p id="messageWrong-5" class="message"></p>
+                    <p id="messageTimeout-5" class="message"></p>
                 </div>
-                <p id="messageCorrect-6" class="correct message"></p>
-                <p id="messageWrong-6" class="message"></p>
-                <p id="messageTimeout-6" class="message"></p>
+                <div class="col-md-4 image-5"></div>
             </div>
-
-            <div id="question-7" class="col-md-12">
-                <p>Why is Milwaukee known as the Cream City?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-7" type="radio" name="question-7" id="option1" value="Cream ale was invented here">
-                        <label class="form-check-label" for="question-7">
-                            Cream ale was invented here
-                        </label><br>
-                    <input class="form-check-input question-7" type="radio" name="question-7" id="option2" value="Milwaukee is the largest city in the dairy state">
-                        <label class="form-check-label" for="question-7">
-                            Milwaukee is the largest city in the dairy state
-                        </label><br>
-                    <input class="form-check-input question-7" type="radio" name="question-7" id="option3" value="Cream cheese was invented here">
-                        <label class="form-check-label" for="question-7">
-                            Cream cheese was invented here
-                        </label><br>
-                    <input class="form-check-input question-7" type="radio" name="question-7" id="option4" value="The color of brick">
-                        <label class="form-check-label" for="question-7">
-                            The color of brick in many buildings in the city
-                        </label>
+            <!-- question-6 -->
+            <div id="question-6" class="row">
+                <div class="col-md-8">
+                    <p>What is the oldest building in Milwaukee?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-6" type="radio" name="question-6" id="option1" value="Benjamin Church House">
+                            <label class="form-check-label" for="question-6">
+                                Benjamin Church House
+                            </label><br>
+                        <input class="form-check-input question-6" type="radio" name="question-6" id="option2" value="Old St. Mary's Church">
+                            <label class="form-check-label" for="question-6">
+                                Old St. Mary's Church
+                            </label><br>
+                        <input class="form-check-input question-6" type="radio" name="question-6" id="option3" value="St. Joan of Arc Chapel">
+                            <label class="form-check-label" for="question-6">
+                                St. Joan of Arc Chapel
+                            </label><br>
+                        <input class="form-check-input question-6" type="radio" name="question-6" id="option4" value="City Hall">
+                            <label class="form-check-label" for="question-6">
+                                City Hall
+                            </label>
+                    </div>
+                    <p id="messageCorrect-6" class="correct message"></p>
+                    <p id="messageWrong-6" class="message"></p>
+                    <p id="messageTimeout-6" class="message"></p>
                 </div>
-                <p id="messageCorrect-7" class="correct message"></p>
-                <p id="messageWrong-7" class="message"></p>
-                <p id="messageTimeout-7" class="message"></p>
+                <div class="col-md-4 image-6"></div>
             </div>
-
-            <div id="question-8" class="col-md-12">
-                <p>Which of these is not a river in Milwaukee?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-8" type="radio" name="question-8" id="option1" value="Milwaukee River">
-                        <label class="form-check-label" for="question-8">
-                            Milwaukee River
-                        </label><br>
-                    <input class="form-check-input question-8" type="radio" name="question-8" id="option2" value="Kinnickinnic River">
-                        <label class="form-check-label" for="question-8">
-                            Kinnickinnic River
-                        </label><br>
-                    <input class="form-check-input question-8" type="radio" name="question-8" id="option3" value="Rock River">
-                        <label class="form-check-label" for="question-8">
-                            Rock River
-                        </label><br>
-                    <input class="form-check-input question-8" type="radio" name="question-8" id="option4" value="Menomonee River">
-                        <label class="form-check-label" for="question-8">
-                            Menomonee River
-                        </label>
+            <!-- question-7 -->
+            <div id="question-7" class="row">
+                <div class="col-md-8">
+                    <p>Why is Milwaukee known as the Cream City?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-7" type="radio" name="question-7" id="option1" value="Cream ale was invented here">
+                            <label class="form-check-label" for="question-7">
+                                Cream ale was invented here
+                            </label><br>
+                        <input class="form-check-input question-7" type="radio" name="question-7" id="option2" value="Milwaukee is the largest city in the dairy state">
+                            <label class="form-check-label" for="question-7">
+                                Milwaukee is the largest city in the dairy state
+                            </label><br>
+                        <input class="form-check-input question-7" type="radio" name="question-7" id="option3" value="Cream cheese was invented here">
+                            <label class="form-check-label" for="question-7">
+                                Cream cheese was invented here
+                            </label><br>
+                        <input class="form-check-input question-7" type="radio" name="question-7" id="option4" value="The color of brick">
+                            <label class="form-check-label" for="question-7">
+                                The color of brick in many buildings in the city
+                            </label>
+                    </div>
+                    <p id="messageCorrect-7" class="correct message"></p>
+                    <p id="messageWrong-7" class="message"></p>
+                    <p id="messageTimeout-7" class="message"></p>
                 </div>
-                <p id="messageCorrect-8" class="correct message"></p>
-                <p id="messageWrong-8" class="message"></p>
-                <p id="messageTimeout-8" class="message"></p>
+                <div class="col-md-4 image-7"></div>
             </div>
-
-            <div id="question-9" class="col-md-12">
-                <p>Which of these musicians/bands is not from Milwaukee?</p>
-                <div class="form-check">
-                    <input class="form-check-input question-9" type="radio" name="question-9" id="option1" value="Les Paul">
-                        <label class="form-check-label" for="question-9">
-                            Les Paul
-                        </label><br>
-                    <input class="form-check-input question-9" type="radio" name="question-9" id="option2" value="The Violent Femmes">
-                        <label class="form-check-label" for="question-9">
-                            The Violent Femmes
-                        </label><br>
-                    <input class="form-check-input question-9" type="radio" name="question-9" id="option3" value="Danny Gokey">
-                        <label class="form-check-label" for="question-9">
-                            Danny Gokey
-                        </label><br>
-                    <input class="form-check-input question-9" type="radio" name="question-9" id="option4" value="The Gufs">
-                        <label class="form-check-label" for="question-9">
-                            The Gufs
-                        </label>
+            <!-- question-8 -->
+            <div id="question-8" class="row">
+                <div class="col-md-8">
+                    <p>Which of these is not a river in Milwaukee?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-8" type="radio" name="question-8" id="option1" value="Milwaukee River">
+                            <label class="form-check-label" for="question-8">
+                                Milwaukee River
+                            </label><br>
+                        <input class="form-check-input question-8" type="radio" name="question-8" id="option2" value="Kinnickinnic River">
+                            <label class="form-check-label" for="question-8">
+                                Kinnickinnic River
+                            </label><br>
+                        <input class="form-check-input question-8" type="radio" name="question-8" id="option3" value="Rock River">
+                            <label class="form-check-label" for="question-8">
+                                Rock River
+                            </label><br>
+                        <input class="form-check-input question-8" type="radio" name="question-8" id="option4" value="Menomonee River">
+                            <label class="form-check-label" for="question-8">
+                                Menomonee River
+                            </label>
+                    </div>
+                    <p id="messageCorrect-8"></p>
+                    <p id="messageWrong-8"></p>
+                    <p id="messageTimeout-8"></p>
                 </div>
-                <p id="messageCorrect-9" class="correct message"></p>
-                <p id="messageWrong-9" class="message"></p>
-                <p id="messageTimeout-9" class="message"></p>
+                <div class="col-md-4 image-8"></div>
             </div>
-
-            <div id="endScreen">
-                <h3>Game Over!</h3>
-                <p>Here's how you did:</p>
-                <p>Wins: <span id="right"></span></p>
-                <p>Losses: <span id="wrong"></span></p>
-                <p>Skipped questions: <span id="unanswered"></span></p>
-                <!--<button id="restart" type="button" class="btn-lg btn-secondary">Play again?</button>-->
-
+            <!-- question-9 -->
+            <div id="question-9" class="row">
+                <div class="col-md-8">
+                    <p>Which of these musicians/bands is not from Milwaukee?</p>
+                    <div class="form-check">
+                        <input class="form-check-input question-9" type="radio" name="question-9" id="option1" value="Les Paul">
+                            <label class="form-check-label" for="question-9">
+                                Les Paul
+                            </label><br>
+                        <input class="form-check-input question-9" type="radio" name="question-9" id="option2" value="The Violent Femmes">
+                            <label class="form-check-label" for="question-9">
+                                The Violent Femmes
+                            </label><br>
+                        <input class="form-check-input question-9" type="radio" name="question-9" id="option3" value="Danny Gokey">
+                            <label class="form-check-label" for="question-9">
+                                Danny Gokey
+                            </label><br>
+                        <input class="form-check-input question-9" type="radio" name="question-9" id="option4" value="The Gufs">
+                            <label class="form-check-label" for="question-9">
+                                The Gufs
+                            </label>
+                    </div>
+                    <p id="messageCorrect-9" class="correct message"></p>
+                    <p id="messageWrong-9" class="message"></p>
+                    <p id="messageTimeout-9" class="message"></p>
+                </div>
+                <div class="col-md-4 image-9"></div>
+            </div>
+            <!-- game over screen -->
+            <div class="row">
+                <div id="endScreen" class="col-md-8">
+                    <h3>Game Over!</h3>
+                    <p>Here's how you did:</p>
+                    <p>Wins: <span id="right"></span></p>
+                    <p>Losses: <span id="wrong"></span></p>
+                    <p>Skipped questions: <span id="unanswered"></span></p>
+                    <!--<button id="restart" type="button" class="btn-lg btn-secondary">Play again?</button>-->
+                </div>
+                <div id="endImage" class="col-md-4"></div>
             </div>
         </main>
 
-    </div><!-- end container -->
     <script src="assets/javascript/app.js"></script>
 </body>
 </html>
