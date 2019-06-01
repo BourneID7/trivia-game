@@ -5,7 +5,7 @@ This multiple-choice timed game was created using html form elements and javascr
 ## Rules
 Press start to start the game.
 
-Questions will laod automatically. You have 20 seconds to answer each question.
+Questions will load automatically. You have 20 seconds to answer each question.
 
 After you answer the game will notify you if you were right or wrong, and will display the correct answer if you got it wrong. 
 The correct answer will also display if you ran out of time before answering.
