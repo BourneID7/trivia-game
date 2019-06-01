@@ -1,6 +1,8 @@
-# trivia-game
-Milwaukee Trivia game
+# Milwaukee Trivia game
 
+This timed game was created using javascript setInterval and timeOut functions to load each question.
+
+## Rules
 Press start to start the game.
 
 Questions will laod automatically. You have 20 seconds to answer each question.
